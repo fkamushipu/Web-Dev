@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Feni Kamushipu">
+        <title>Development Practical Test</title>
+
+        <!--Bootstrap style link-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="css.css"><!--Default css-->
+
+        <!--Ajax  news api script  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!--Bootstrap script-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+    
+    </head>
+    <body>
+        <!--Top Navigation -->
+        <nav class= "navbar   navbar-default navbar-fixed-top" id="top">
+            <div class="container-fluid">
+                <!--Top Navigation on toggle -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!--Top Navigation lists of links -->
+                <div class="collapse  navbar-collapse" id="topNavigation">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#index" >Home</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#clientform">Client Form</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="pages/admin.html"><span class="glyphicon glyphicon-log-in"></span> Admin Login</a></li>
+                      </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid " id="index">
+            <div class="row content ">
+                <!--Content -->
+                <div class="col-sm-9">
+                    <h5 class="heading5">Development Practical Test </h5> <hr>
+
+                    <!--Clients View-->
+                    <div class="card cardedit" id="Clients">
+                        <div class="card-header text-center heading6">
+                            Clients View (Add client)
+                        </div>
+                        <hr>
+                        <div class="card-body ">
+                            <div class="card mb-3" id="AddClient">
+                                <div class="card-body">
+                                  <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">Name :</label>
+                                    <div class="col-md-6">
+                                      <input type="text" id="name" class="form-control" name="name" placeholder="Enter clients name" required/>
+                                      </div>
+                                  </div>
+                                  <div class="form-group row">
+                                      <label for="client_Code" class="col-md-4 col-form-label text-md-right">Client Code: </label>
+                                      <div class="col-md-6">
+                                          <input type="text" id="client_Code" class="form-control" name="client_Code" placeholder="Enter client code" required/>
+                                      </div>
+                                   </div>
+                                   <div class="form-group row">
+                                      <label for="linked_contacts" class="col-md-4 col-form-label text-md-right">No. of linked contcts :</label>
+                                      <div class="col-md-6">
+                                        <input type="text" id="linked_contacts" class="form-control" name="linked_contacts" placeholder="Enter the linked contacts." required/>
+                                        </div>
+                                    </div>
+                                      <div class="form-group row">
+                                          <button class="btn btn-success btn-lg btn-block" type="submit"  id="add_clients">Add Client</button>
+                                      </div>
+                                </div>
+                                <h6 class="heading1">Display Clients</h6>
+                                <div class="col-sm-9">
+                                    <!--Clients List -->
+                                  <div class="card-header heading1"><span id="client_Code"></span> Clients </div>
+                                  <div class="clients_card " >
+                                    <div id="clients">
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <br>
+                     <!--Contacts View-->
+                     <div class="card cardedit" id="contacts">
+                        <div class="card-header text-center heading6">
+                            Contacts View (Add contact)
+                        </div>
+                        <hr>
+                        <div class="card-body ">
+                            <div class="card mb-3" id="add_Contact">
+                                <div class="card-body">
+                                  <div class="form-group row">
+                                    <label for="contact_name" class="col-md-4 col-form-label text-md-right">Name :</label>
+                                    <div class="col-md-6">
+                                      <input type="text" id="contact_name" class="form-control" name="contact_name" placeholder="Enter contact name" required/>
+                                      </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="contact_surname" class="col-md-4 col-form-label text-md-right">Surname :</label>
+                                    <div class="col-md-6">
+                                      <input type="text" id="contact_surname" class="form-control" name="contact_surname" placeholder="Enter contact surname" required/>
+                                      </div>
+                                  </div>
+                                  <div class="form-group row">
+                                      <label for="contact_email" class="col-md-4 col-form-label text-md-right">Email Address: </label>
+                                      <div class="col-md-6">
+                                          <input type="text" id="contact_email" class="form-control" name="contact_email" placeholder="Enter contact email address" required/>
+                                      </div>
+                                   </div>
+                                   <div class="form-group row">
+                                      <label for="linked_clients" class="col-md-4 col-form-label text-md-right">No. of linked clients :</label>
+                                      <div class="col-md-6">
+                                        <input type="text" id="linked_clients" class="form-control" name="linked_clients" placeholder="Select the linked clients." required/>
+                                        </div>
+                                    </div>
+                                      <div class="form-group row">
+                                          <button class="btn btn-success btn-lg btn-block" type="submit"  id="add_clients">Add Client</button>
+                                      </div>
+                                </div>
+                                <h6 class="heading1">Display Clients</h6>
+                                <div class="col-sm-9">
+                                    <!--Clients List -->
+                                  <div class="card-header heading1"><span id="client_Code"></span> Clients </div>
+                                  <div class="clients_card " >
+                                    <div id="clients">
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="javascript.js"></script>
+
+                <!-- Load React. -->
+        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+        <!-- Load our React component. -->
+        <script src="app.js"></script>
+    </body>
+</html>
